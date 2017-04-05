@@ -162,8 +162,8 @@
 
 <div id="Like">
   <center>
-    <button  type="button" style="margin:40px;height:50px;width:70px">Next</button> 
-    
+    <button  type="button" style="margin:40px;height:50px;width:70px; color:green;">Like</button> 
+    <button  type="button" style="margin:40px;height:50px;width:70px; color:red;">Dislike</button> 
     
   </center>
 </div>

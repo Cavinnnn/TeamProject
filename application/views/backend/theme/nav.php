@@ -1,18 +1,48 @@
 <style>
+.nav{
+width:100%;
+float:left;
+border-radius: 5px;
+}
+ul { 
 
-.nav-justified>li>a{
-  padding:0;
-  border:0;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+
 }
-.nav-justified1{
-  max-width:500px;
-  float:left;
+
+li {
+display: inline-block;
+text-align:center; 
+color: white;
 }
-.nav-justified2{
-  max-width:200px;
+
+li a {
+display: inline-block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+
+}
+
+li a:hover {
+   color: white;
+    
+}
+.heightNav{
+    height:1%;
+    margin-bottom:50px;
+    padding:0px;
+}
+
+.float{
   float:right;
-  
 }
+
 </style>
 
 
@@ -24,28 +54,24 @@
 		<!-- HEADER -->
 	
 		<header>
-	<div class="container">
 
-      <!-- This nav has been taken from http://getbootstrap.com/examples/justified-nav/-->
-      <div class="masthead">
-        <nav>
-          <ul class="nav nav-justified nav-justified1">
+        <nav class="heightNav">
+          <ul>
             <li><a href="/users/search">Search</a></li>
             <li><a href="/users/discover">Discover</a></li>
             <li><a href="/users/charts">Charts</a></li>
             <li><a href="/users/artists">Artists</a></li>
             <li><a href="/users/people">People</a></li>
             <li><a href="/users/blank">HOMEPAGE</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/users/account">My Username</a></li>
-            <li><a href="/users/account">Log-In</a></li>
+            <li><a href="/users/time">timer</a></li>
+          
+            <li class="float"><a href="/users/account">My Username</a></li>
+            <li class="float"><a href="/users/payment">Log-In</a></li>
             
         </ul>
               
       </nav>
-      </div>
-      
+
  </header>
 		
 	</body>

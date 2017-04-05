@@ -42,12 +42,45 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             //$this->load->view('backend/theme/nav', $data);
             $this->load->view('users/blank', $data);
+            //$this->load->view('backend/theme/footer');
+            $this->load->helper('url');
+        }else{
+            redirect('users/login');
+        }
+    }
+    
+    
+    
+     public function peopleExtend(){
+        $data = array();
+        if($this->session->userdata('isUserLoggedIn')){
+            $data['user'] = $this->user->getRows(array('id'=>$this->session->userdata('userId')));
+            //load the view
+            $this->load->view('backend/theme/header');
+            $this->load->view('backend/theme/nav', $data);
+            $this->load->view('users/peopleExtend', $data);
             $this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
         }
     }
+    public function time(){
+        $data = array();
+        if($this->session->userdata('isUserLoggedIn')){
+            $data['user'] = $this->user->getRows(array('id'=>$this->session->userdata('userId')));
+            //load the view
+            $this->load->view('backend/theme/header');
+            $this->load->view('backend/theme/nav', $data);
+            $this->load->view('users/time', $data);
+            $this->load->view('backend/theme/footer');
+            $this->load->helper('url');
+        }else{
+            redirect('users/login');
+        }
+    }
+    
+    
     public function artists(){
         $data = array();
         if($this->session->userdata('isUserLoggedIn')){
@@ -98,7 +131,7 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/people', $data);
-            $this->load->view('backend/theme/footer');
+           // $this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');

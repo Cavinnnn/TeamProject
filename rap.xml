@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<music>
-  <genre>
+<underground>
     
-    <artist>bob</artist>
-    <genre>Jani</genre>
-    <album>Hip-Hop/Rap</album>
-    <image >image</image>
     
-    </genre>
-</music>
- 
- 
-  
+    
+<music><artist>Yung Pe$o</artist><title>4 Am</title><genre>hip-hop</genre><soundcloud>https://soundcloud.com/nuxsense/1-4-am-yung-pe-o</soundcloud><img>https://pbs.twimg.com/profile_images/692107746817216512/pVRkvpbC_400x400.jpg</img><tags>nuxsense, music</tags></music><music><artist>Ed Sheeran</artist><title>Thinking out Loud</title><genre>hip-hop</genre><soundcloud>https://soundcloud.com/edsheeran/thinking-out-loud</soundcloud><img>https://img.clipartfest.com/a24885e4262120dad4e865ea976a0354_song-texte-thinking-out-loud-thinking-out-loud_966-743.png</img><tags>Ed Sheeran</tags></music></underground>

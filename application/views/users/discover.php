@@ -8,7 +8,7 @@
 
   width: 320px;
   height: 320px;
-  margin:3px;
+  margin:20px;
   margin-bottom:7px;
   float:left;
 }
@@ -71,27 +71,44 @@ $releases = $api->getRecommendations($options);
                       </div>';
                   }
     }else{
-      $xml = simplexml_load_file("http://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=adele&api_key=a3ea499c8bd4464f8ea1ab89bf2a7a93");
-     foreach ($releases->tracks as $album) {
-       $artistName = $album->artists[0]->name;
-       $x = 0;
-                  $id = $album->id;
-                   $tracks1 = $api->getTrack($id);
+$files= array(
+  'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=ed%20sheeran&track=perfect&api_key=a3ea499c8bd4464f8ea1ab89bf2a7a93',
+  'http://ws.audioscrobbler.com/2.0/?method=track.getsimilar&artist=cher&track=believe&api_key=a3ea499c8bd4464f8ea1ab89bf2a7a93'
+);
+
+$dom = new DOMDocument();
+$dom->appendChild($dom->createElement('similartracks'));
+
+foreach ($files as $filename) {
+  $addDom = new DOMDocument();
+  $addDom->load($filename);
+  if ($addDom->documentElement) {
+    foreach ($addDom->documentElement->childNodes as $node) {
+      $dom->documentElement->appendChild(
+        $dom->importNode($node, TRUE)
+      );
+    }
+  }
+}
+
+$dom->save('merged.xml');
+$xml = simplexml_load_file("merged.xml");
+						$discover = count($xml->similartracks->children());
+							foreach($xml->similartracks->track as $item){
     							echo '<div class="demo-card-square mdl-card mdl-shadow--2dp">
-                        <div style="width: 320px;height: 320px;background:url(\'\') top right 15% no-repeat #46B6AC;background-size:100% 100%;" class="mdl-card__title mdl-card--expand">
-                          <h2 class="mdl-card__title-text">'; echo $album->name; echo '</h2>
+                        <div style="background:url(\''; echo $item->image[3]; echo'\') top right 15% no-repeat #46B6AC;background-size:100%;" class="mdl-card__title mdl-card--expand">
+                          <h2 class="mdl-card__title-text">'; echo $item->name; echo '</h2>
                         </div>
                         <div class="mdl-card__supporting-text">
-                              by ';  echo $album->artists[0]->name; echo' | Preview:
-                              
- 
+                              by '; echo $item->artist->name; echo' | Played: '; echo number_format(intval($item->playcount)); echo '
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                          <a href="'; echo $album->external_urls->spotify; echo '" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          <a href="'; echo $item->url; echo '" target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                             Add to Collection(Link to track)
                           </a>
                         </div>
                       </div>';
+                  
                   }
     }
 						

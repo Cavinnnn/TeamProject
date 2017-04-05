@@ -123,7 +123,7 @@ h1 {
   display: inline-block;
   width: 100%;
   border: 1px solid #F1F3F5;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   outline: none;
   padding: 15px;
   border-radius: 3px;
@@ -198,26 +198,13 @@ h1 {
     </div>
     <div class='sidebar__menu-item'>
       <i class='a'></i>
-      Settings
-     
-    </div>
-    <div class='sidebar__menu-item'>
-      <i class='b'></i>
       Likes
     </div>
-    <div class='sidebar__menu-item sidebar__menu-item'>
-      <i class='c'></i>
-      Library
-    </div>
-    <div class='sidebar__menu-item'>
-      <i class='d'></i>
-      Friends
-    </div>
+   
 <br>
   </div>
   <div class='main'>
     <div class='main__header'>
-      <h2>My Account</h2>
     </div>
     <div class='main__content'>
       <div class='main__avatar'>
