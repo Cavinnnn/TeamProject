@@ -37,6 +37,9 @@
 								  <?php echo form_error('password','<span class="help-block">','</span>'); ?>
 								</div>
 								<div class="form-group">
+								  <input type="text" class="form-control" name="pic" placeholder="Profile Picture Link" required="">
+								</div>
+								<div class="form-group">
 								  <input type="password" class="form-control" data-match=".inputPassword" data-match-error="Whoops, these don't match" name="conf_password" placeholder="Confirm password" required="">
 								  <?php echo form_error('conf_password','<span class="help-block">','</span>'); ?>
 								</div>

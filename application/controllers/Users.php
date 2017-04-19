@@ -14,7 +14,7 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/search', $data);
-            $this->load->view('backend/theme/footer');
+            //$this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
@@ -42,7 +42,7 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             //$this->load->view('backend/theme/nav', $data);
             $this->load->view('users/blank', $data);
-            //$this->load->view('backend/theme/footer');
+            $this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
@@ -59,27 +59,13 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/peopleExtend', $data);
-            $this->load->view('backend/theme/footer');
+            //$this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
         }
     }
-    public function time(){
-        $data = array();
-        if($this->session->userdata('isUserLoggedIn')){
-            $data['user'] = $this->user->getRows(array('id'=>$this->session->userdata('userId')));
-            //load the view
-            $this->load->view('backend/theme/header');
-            $this->load->view('backend/theme/nav', $data);
-            $this->load->view('users/time', $data);
-            $this->load->view('backend/theme/footer');
-            $this->load->helper('url');
-        }else{
-            redirect('users/login');
-        }
-    }
-    
+   
     
     public function artists(){
         $data = array();
@@ -89,7 +75,7 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/suggested', $data);
-            $this->load->view('backend/theme/footer');
+           // $this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
@@ -103,7 +89,6 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/charts', $data);
-            $this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
@@ -117,7 +102,7 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/discover', $data);
-            $this->load->view('backend/theme/footer');
+            //$this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
@@ -208,6 +193,7 @@ class Users extends CI_Controller {
 
             $userData = array(
                 'name' => strip_tags($this->input->post('name')),
+                'pic' => strip_tags($this->input->post('pic')),
                 'email' => strip_tags($this->input->post('email')),
                 'password' => md5($this->input->post('password')),
                 'gender' => $this->input->post('gender'),

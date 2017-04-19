@@ -57,16 +57,15 @@ li a:hover {
 
         <nav class="heightNav">
           <ul>
+             <img style="margin-left:10px;" height="40px" src="/backend-assets/css/images/BeefRapLogo.png" />
             <li><a href="/users/search">Search</a></li>
-            <li><a href="/users/discover">Discover</a></li>
+            <!--<li><a href="/users/artists">Discover</a></li>-->
+            <li><a href="/users/artists">Suggested</a></li>
             <li><a href="/users/charts">Charts</a></li>
-            <li><a href="/users/artists">Artists</a></li>
             <li><a href="/users/people">People</a></li>
             <li><a href="/users/blank">HOMEPAGE</a></li>
-            <li><a href="/users/time">timer</a></li>
-          
-            <li class="float"><a href="/users/account">My Username</a></li>
-            <li class="float"><a href="/users/payment">Log-In</a></li>
+
+            <li class="float"><a href="/users/account"><?php echo $user['name']; ?></a></li>
             
         </ul>
               

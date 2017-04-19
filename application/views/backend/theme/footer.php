@@ -2,24 +2,23 @@
 .copyright{
 height:30px;
 width:100%;
-background:#000019;
+background:#333;
 color:white;
 }
+.footer{
+	position:absolute;
+	bottom: 0;
+
+
+}
 </style>
-
-
 <!-- footer -->
-			
-		<footer style="posistion:relative;right: 0;bottom: 0;left: 0;">
+		<footer id="footer">
 			<div class="copyright">
 				<center>
-					<span><strong>Copyright <?php date('Y'); ?></strong> Beef Rap&copy;</span>
+					<span><strong>Copyright</strong> Beef Rap&copy;</span>
 				</center>
 			</div>
 		</footer>
-		
-
-		
-		
 	</body>	
 </html>
