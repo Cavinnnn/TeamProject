@@ -1,7 +1,7 @@
             
 <style>
 body{
-  background-color:#F0F8FF;
+  background-color: #D9DFDF;
 }
 #upload{
     width:100%;
@@ -70,24 +70,14 @@ body{
         <section id="upload" class="animated " style="padding:10px;">
         
                 <div id="uploadImage">
-                 <img src="http://simpleicon.com/wp-content/uploads/cloud-upload-1.png">
+                 <img style="height:50vh;max-height:338px;overflow:hidden;" src="http://simpleicon.com/wp-content/uploads/cloud-upload-1.png">
                 </div>
-                
                 
                 <h1>Would you like to upload music!?</h1>
                 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie nibh cursus tortor venenatis, non pharetra urna efficitur.Proin
-                tincidunt dictum molestie. Morbi at arcu eros. Cras pellentesque enim sit amet augue volutpat, tempor mollis nisl pulvinar. Quisque aliquet
-                rhoncus felis, quis scelerisque turpis finibus sit amet. Sed efficitur vulputate est, ac dictum quam. Etiam at congue augue. Sed quis lectus
-                vitae neque commodo molestie. Proin semper elit a augue viverra, id mattis ante tristique. Sed at mollis ligula. Donec posuere ligula massa,
-                ut porta ex ullamcorper quis.
-                </p>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie nibh cursus tortor venenatis, non pharetra urna efficitur.Proin
-                tincidunt dictum molestie. Morbi at arcu eros. Cras pellentesque enim sit amet augue volutpat, tempor mollis nisl pulvinar. Quisque aliquet
-                rhoncus felis, quis scelerisque turpis finibus sit amet. Sed efficitur vulputate est, ac dictum quam. Etiam at congue augue. Sed quis lectus
-                vitae neque commodo molestie. Proin semper elit a augue viverra, id mattis ante tristique. Sed at mollis ligula. Donec posuere ligula massa,
-                ut porta ex ullamcorper quis.
+                <p>This section our website is dedicated to upload music for underground artists. We try to sort music three different catogories based on what an admin likes.
+                We feel that most up-and coming artists don't get enough recognition. If you can follow the link located underneath these paragraphs, you
+                can upload music one it has previously been uploaded to soundcloud. The average waiting time for a link to be recognised is usually 3-5 hours.  
                 </p>
                 
                 <p><a href="peopleExtend">
@@ -227,15 +217,19 @@ body{
                         
                             widget.bind(SC.Widget.Events.READY, function() {
                               widget.bind(SC.Widget.Events.PLAY, function() {
+                              
                                 // get information about currently playing sound
                                 widget.getCurrentSound(function(currentSound) {
+                                
                                   console.log(\'sound \' + currentSound.get(\'\') + \'began to play\');
                                 });
                               });
+                              
                               // get current level of volume
                               widget.getVolume(function(volume) {
                                 console.log(\'current volume value is \' + volume);
                               });
+                              
                               // set new volume level
                               widget.setVolume(50);
                               // get the value of the current position

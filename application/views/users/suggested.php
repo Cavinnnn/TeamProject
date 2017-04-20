@@ -3,6 +3,9 @@
   margin:10px;
   color:#696969;
 }
+body{
+  background-color: #D9DFDF;
+}
 #suggested{
     margin-top:30px;
     display:inline-block;
@@ -10,19 +13,12 @@
     color:#696969;
 }
 .demo-card-square.mdl-card {
+
   width: 320px;
   height: 320px;
-  margin: 2em;
-  margin-right: 4.3em;
+  margin:3.8%;
   margin-bottom:7px;
   float:left;
-  padding:10px;
- /* padding:10px;
-  width: 320px;
-  height: 320px;
-  margin: 3.8%;
-  margin-bottom:7px;
-  float:left;*/
 }
 .demo-card-square > .mdl-card__title {
   color: #fff;
@@ -92,7 +88,7 @@
         						$xml = simplexml_load_file("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=a3ea499c8bd4464f8ea1ab89bf2a7a93&limit=4");
         						$suggested = count($xml->tracks->children());
         							for($x = 0; $x < $suggested; $x++){
-            							echo '<div class="demo-card-square mdl-card mdl-shadow--2dp">
+            							echo '<div  class="demo-card-square mdl-card mdl-shadow--2dp">
                                 <div style="background:url(\''; echo $xml->tracks->track[$x]->image[3]; echo'\') top right 15% no-repeat #46B6AC;background-size:100%;" class="mdl-card__title mdl-card--expand">
                                   <h2 class="mdl-card__title-text">'; echo $xml->tracks->track[$x]->name; echo '</h2>
                                 </div>
@@ -112,7 +108,7 @@
         						$xml = simplexml_load_file("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=a3ea499c8bd4464f8ea1ab89bf2a7a93&limit=3");
         						$suggested = count($xml->tracks->children());
         							for($x = 0; $x < $suggested; $x++){
-            							echo '<div class="demo-card-square mdl-card mdl-shadow--2dp">
+            							echo '<div style="margin:50px;" class="demo-card-square mdl-card mdl-shadow--2dp">
                                 <div style="background:url(\''; echo $xml->tracks->track[$x]->image[3]; echo'\') top right 15% no-repeat #46B6AC;background-size:100%;" class="mdl-card__title mdl-card--expand">
                                   <h2 class="mdl-card__title-text">'; echo $xml->tracks->track[$x]->name; echo '</h2>
                                 </div>
@@ -173,6 +169,7 @@
     
   </center>
 </div>-->
+<!--BELOW CODE BUILDS A SELECT TO QUERY THE DATABASE ON A RANDOM SEED THAT THE USER HAS LIKED -->
 <?php
 $servername = "localhost";
 $username = "cavinn";

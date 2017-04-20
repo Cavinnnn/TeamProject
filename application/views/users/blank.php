@@ -1,8 +1,8 @@
-<!-- code from https://codepen.io/davidhc/pen/nLpJk -->
+<!-- code from https://codepen.io/chrisfrees/pen/bpjxc  -->
 
 <style>
 body{
-  font-size: 1px;
+  
   font-family: 'Rubik Mono One', sans-serif;
   
 }
@@ -48,7 +48,7 @@ text-decoration: none;
 
 .slider {
   max-width: 100%;
- 
+  margin-top:-1px;
   height: 750px;/* reajust size of images*/
 
   position: relative;
@@ -115,7 +115,7 @@ text-decoration: none;
 }
 #about2{ /* #bbbec1*/
   margin-top:-25px;
-  background-color: #595959;
+  
   background:#999999; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#d5d8dc, #d5d8dc); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#d5d8dc, #d5d8dc); /* For Opera 11.1 to 12.0 */
@@ -202,9 +202,11 @@ margin-top:50px;
   
   }
 #vinyl{
+  position:relative;
   float:left;
-  margin-bottom:50px;
-  padding-right:10%;#d5d8dc
+  
+  
+  padding-right:10%;
 }
 
 #aboutpage{
@@ -226,56 +228,107 @@ margin:6%;
   margin:10px;
 }
 .float{
-  float:right;
+  float:right!important;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
 }
 
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
 </style>
 
 <script>
   
    $(document).ready(function(){
-     
-    $('html, body').animate({
-        scrollTop: $("#section2").offset().top
-        behavior: 'smooth'
-    })
+     $("#homeBtn").click(function() {
+          $('html, body').animate({
+              scrollTop: $("#section1").offset().top
+          }, 2000);
+      });
+      $("#paymentBtn").click(function() {
+          $('html, body').animate({
+              scrollTop: $("#section2").offset().top
+          }, 2000);
+      });
+      $("#aboutBtn").click(function() {
+          $('html, body').animate({
+              scrollTop: $("#section3").offset().top
+          }, 2000);
+      });
+      $("#servicesBtn").click(function() {
+          $('html, body').animate({
+              scrollTop: $("#section4").offset().top
+          }, 2000);
+      });
     });
-    
-   
-   $('html, body').animate({
-        scrollTop: $("#section3").offset().top
-        behavior: 'smooth'
-    })
-    });
-    
-   
-   
-   $(document).ready(function(){
-     
-    $('html, body').animate({
-        scrollTop: $("#section4").offset().top
-        behavior: 'smooth'
-    })
-    });
-    
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
 </script>
 
 
 
-  <div >
     
-    <nav class="heightNav" style="margin-bottom:0.3em;">
-      <ul id="nav1"> 
-      <li class="nav"><a href="#section1">Home</a></li>
-      <li class="nav"><a href="#section2">Payment</a></li>
-      <li class="nav"><a href="#section3">About Us</a></li>
-      <li class="nav"><a href="#section4">Services</a></li>
-      
-      
-      <li class="float"><a href="/users/account">Sign In</a></li>
-      <li class="float"><a href="/users/registration">Registration</a></li>
-      </ul>
-    </nav>
+  <div class="heightNav topnav" id="myTopnav" >
+    <img style="margin-left:10px;margin-right:10px;margin-top:4px;float:left;" height="40px" src="/backend-assets/css/images/BeefRapLogo.png" />
+      <a id="homeBtn" href="#section1">Home</a>
+      <a id="paymentBtn" href="#section2">Payment</a>
+      <a id="aboutBtn" href="#section3">About Us</a>
+      <a id="servicesBtn" href="#section4">Services</a>
+      <a class="float" href="/login">Sign In</a>
+      <a class="float" href="/registration">Register</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
 
@@ -379,8 +432,8 @@ margin:6%;
 <section id="about2">
   <h2>What else do our services provide?</h2>
   
-  <div id="vinyl">
-  <img src="/backend-assets/css/images/vinyl 500.png">
+  <div style="max-width:100%;" id="vinyl">
+  <img style="max-width:75%;" src="/backend-assets/css/images/vinyl 500.png" >
   </div>
   
   
@@ -391,6 +444,12 @@ margin:6%;
     vulputate. Nulla consectetur venenatis mollis. </p>
   
   
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed est purus. Suspendisse sodales, ex sit amet sodales molestie, elit ex tincidunt tellus,
+    vel convallis nunc sapien at dolor. Pellentesque scelerisque ligula enim, commodo tristique eros ultricies nec. Cras pulvinar felis mi. Nunc risus lacus, 
+    placerat non porta ac, semper a nisi. Mauris sit amet ultrices orci. Integer ullamcorper tellus orci, non iaculis massa auctor venenatis. Nullam eget lectus varius,
+    dictum nisl eget, consequat massa. Suspendisse at eros eu magna sollicitudin pulvinar. Donec sit amet quam ante. Maecenas quis elementum ipsum. Nunc placerat elementum
+    vulputate. Nulla consectetur venenatis mollis. </p>
+    
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed est purus. Suspendisse sodales, ex sit amet sodales molestie, elit ex tincidunt tellus,
     vel convallis nunc sapien at dolor. Pellentesque scelerisque ligula enim, commodo tristique eros ultricies nec. Cras pulvinar felis mi. Nunc risus lacus, 
     placerat non porta ac, semper a nisi. Mauris sit amet ultrices orci. Integer ullamcorper tellus orci, non iaculis massa auctor venenatis. Nullam eget lectus varius,

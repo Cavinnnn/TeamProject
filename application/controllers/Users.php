@@ -130,7 +130,7 @@ class Users extends CI_Controller {
             $this->load->view('backend/theme/header');
             $this->load->view('backend/theme/nav', $data);
             $this->load->view('users/myaccount', $data);
-            $this->load->view('backend/theme/footer');
+            //$this->load->view('backend/theme/footer');
             $this->load->helper('url');
         }else{
             redirect('users/login');
@@ -172,7 +172,7 @@ class Users extends CI_Controller {
                 if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn',TRUE);
                     $this->session->set_userdata('userId',$checkLogin['id']);
-                    redirect('users/search');
+                    redirect('/search');
                 }else{
                     $data['error_msg'] = 'Wrong email or password, please try again.';
                 }
@@ -223,7 +223,7 @@ class Users extends CI_Controller {
         $this->session->unset_userdata('isUserLoggedIn');
         $this->session->unset_userdata('userId');
         $this->session->sess_destroy();
-        redirect('users/login/');
+        redirect('/login');
     }
     
     /*

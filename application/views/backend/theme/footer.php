@@ -8,7 +8,7 @@ color:white;
 .footer{
 	position:absolute;
 	bottom: 0;
-
+	
 
 }
 </style>
@@ -16,7 +16,7 @@ color:white;
 		<footer id="footer">
 			<div class="copyright">
 				<center>
-					<span><strong>Copyright</strong> Beef Rap&copy;</span>
+					<span>Copyright</stron> Beef Rap&copy;</span>
 				</center>
 			</div>
 		</footer>
